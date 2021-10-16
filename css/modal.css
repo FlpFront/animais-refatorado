@@ -1,0 +1,87 @@
+.modal-container{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-container.ativo{
+    display: flex;
+}
+
+.modal{
+    background-color: #fff;
+    padding: 40px;
+    border: 10px solid #fb5;
+    box-shadow: 0 0 0 10px white;
+    position: relative;
+    min-width: 300px;
+}
+
+@keyframes animeModal{
+    from{
+        opacity: 0;
+        transform: translate3d(0, -40px, 0);
+    }
+
+    to{
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+.ativo .modal {
+    animation: animeModal .5s forwards;
+}
+
+[data-modal="fechar"].ativo{
+    display: none;
+}
+.fechar{
+    width: 50px;
+    height: 50px;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    background: #e54;
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.modal label, input{
+    font-family: 'IBM Plex Mono', monospace;
+    display: block;
+    font-size: 1.8rem;
+    margin: 8px 0;
+    font-weight: bold;
+}
+
+.modal input{
+    padding: 10px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.modal button[type="submit"]{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.6rem;
+    display: block;
+    border-radius: 4px;
+    padding: 10px 30px;
+    border: none;
+    background: #e54;
+    margin-top: 5px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
